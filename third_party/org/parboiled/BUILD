@@ -26,22 +26,6 @@ scala_import(
 )
 
 scala_import(
-    name = "parboiled_java",
-    jars = [
-        "@org_parboiled_parboiled_java//jar:file",
-    ],
-    runtime_deps = [
-    ],
-    deps = [
-        "//third_party/org/ow2/asm",
-        "//third_party/org/ow2/asm:asm_analysis",
-        "//third_party/org/ow2/asm:asm_tree",
-        "//third_party/org/ow2/asm:asm_util",
-        "//third_party/org/parboiled:parboiled_core",
-    ],
-)
-
-scala_import(
     name = "parboiled_core",
     jars = [
         "@org_parboiled_parboiled_core//jar:file",

@@ -13,6 +13,20 @@ load(
 load("@io_bazel_rules_scala//scala:scala_import.bzl", "scala_import")
 
 scala_import(
+    name = "httpclient",
+    jars = [
+        "@org_apache_httpcomponents_httpclient//jar:file",
+    ],
+    runtime_deps = [
+    ],
+    deps = [
+        "//third_party/commons-codec:commons_codec",
+        "//third_party/commons-logging:commons_logging",
+        "//third_party/org/apache/httpcomponents:httpcore",
+    ],
+)
+
+scala_import(
     name = "httpcore",
     jars = [
         "@org_apache_httpcomponents_httpcore//jar:file",
@@ -32,19 +46,5 @@ scala_import(
     ],
     deps = [
         "//third_party/org/apache/httpcomponents:httpclient",
-    ],
-)
-
-scala_import(
-    name = "httpclient",
-    jars = [
-        "@org_apache_httpcomponents_httpclient//jar:file",
-    ],
-    runtime_deps = [
-    ],
-    deps = [
-        "//third_party/commons-codec:commons_codec",
-        "//third_party/commons-logging:commons_logging",
-        "//third_party/org/apache/httpcomponents:httpcore",
     ],
 )
