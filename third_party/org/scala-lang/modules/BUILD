@@ -25,9 +25,9 @@ scala_import(
 )
 
 scala_import(
-    name = "scala_parser_combinators_2_11",
+    name = "scala_xml_2_11",
     jars = [
-        "@org_scala_lang_modules_scala_parser_combinators_2_11//jar:file",
+        "@org_scala_lang_modules_scala_xml_2_11//jar:file",
     ],
     runtime_deps = [
     ],
@@ -37,9 +37,9 @@ scala_import(
 )
 
 scala_import(
-    name = "scala_xml_2_11",
+    name = "scala_parser_combinators_2_11",
     jars = [
-        "@org_scala_lang_modules_scala_xml_2_11//jar:file",
+        "@org_scala_lang_modules_scala_parser_combinators_2_11//jar:file",
     ],
     runtime_deps = [
     ],
