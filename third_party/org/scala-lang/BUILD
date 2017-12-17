@@ -13,17 +13,6 @@ load(
 load("@io_bazel_rules_scala//scala:scala_import.bzl", "scala_import")
 
 scala_import(
-    name = "scala_library",
-    jars = [
-        "@org_scala_lang_scala_library//jar:file",
-    ],
-    runtime_deps = [
-    ],
-    deps = [
-    ],
-)
-
-scala_import(
     name = "scala_compiler",
     jars = [
         "@org_scala_lang_scala_compiler//jar:file",
@@ -35,6 +24,17 @@ scala_import(
         "//third_party/org/scala-lang:scala_reflect",
         "//third_party/org/scala-lang/modules:scala_parser_combinators_2_11",
         "//third_party/org/scala-lang/modules:scala_xml_2_11",
+    ],
+)
+
+scala_import(
+    name = "scala_library",
+    jars = [
+        "@org_scala_lang_scala_library//jar:file",
+    ],
+    runtime_deps = [
+    ],
+    deps = [
     ],
 )
 
