@@ -17,6 +17,7 @@ scala_import(
     jars = [
         "@org_scalacheck_scalacheck_2_11//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

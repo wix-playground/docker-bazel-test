@@ -17,6 +17,7 @@ scala_import(
     jars = [
         "@org_mockito_mockito_core//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

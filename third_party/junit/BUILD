@@ -17,6 +17,7 @@ scala_import(
     jars = [
         "@junit_junit//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

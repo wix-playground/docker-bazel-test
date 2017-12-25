@@ -17,6 +17,7 @@ scala_import(
     jars = [
         "@commons_codec_commons_codec//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

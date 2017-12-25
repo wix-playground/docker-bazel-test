@@ -17,6 +17,7 @@ scala_import(
     jars = [
         "@org_objenesis_objenesis//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

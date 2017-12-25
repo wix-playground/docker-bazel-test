@@ -17,6 +17,7 @@ scala_import(
     jars = [
         "@com_chuusai_shapeless_2_11//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

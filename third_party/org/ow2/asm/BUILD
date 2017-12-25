@@ -13,34 +13,11 @@ load(
 load("@io_bazel_rules_scala//scala:scala_import.bzl", "scala_import")
 
 scala_import(
-    name = "asm_analysis",
-    jars = [
-        "@org_ow2_asm_asm_analysis//jar:file",
-    ],
-    runtime_deps = [
-    ],
-    deps = [
-        "//third_party/org/ow2/asm:asm_tree",
-    ],
-)
-
-scala_import(
-    name = "asm_util",
-    jars = [
-        "@org_ow2_asm_asm_util//jar:file",
-    ],
-    runtime_deps = [
-    ],
-    deps = [
-        "//third_party/org/ow2/asm:asm_tree",
-    ],
-)
-
-scala_import(
     name = "asm",
     jars = [
         "@org_ow2_asm_asm//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [
@@ -52,6 +29,7 @@ scala_import(
     jars = [
         "@org_ow2_asm_asm_commons//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [
@@ -64,6 +42,7 @@ scala_import(
     jars = [
         "@org_ow2_asm_asm_tree//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

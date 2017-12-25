@@ -1,0 +1,30 @@
+licenses(["reciprocal"])
+
+package(default_visibility = ["//visibility:public"])
+
+load(
+    "@io_bazel_rules_scala//scala:scala.bzl",
+    "scala_binary",
+    "scala_library",
+    "scala_test",
+    "scala_macro_library",
+    "scala_specs2_junit_test",
+)
+load("@io_bazel_rules_scala//scala:scala_import.bzl", "scala_import")
+
+scala_import(
+    name = "lettuce",
+    jars = [
+        "@biz_paluch_redis_lettuce//jar:file",
+    ],
+    tags = ["manual"],
+    runtime_deps = [
+    ],
+    deps = [
+        "//third_party/com/google/guava",
+        "//third_party/io/netty:netty_common",
+        "//third_party/io/netty:netty_handler",
+        "//third_party/io/netty:netty_transport",
+        "//third_party/io/reactivex:rxjava",
+    ],
+)

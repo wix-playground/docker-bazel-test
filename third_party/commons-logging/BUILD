@@ -17,6 +17,7 @@ scala_import(
     jars = [
         "@commons_logging_commons_logging//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

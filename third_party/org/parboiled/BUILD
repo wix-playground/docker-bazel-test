@@ -17,6 +17,7 @@ scala_import(
     jars = [
         "@org_parboiled_parboiled_scala_2_11//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [
@@ -26,18 +27,16 @@ scala_import(
 )
 
 scala_import(
-    name = "parboiled_java",
+    name = "parboiled_2_11",
     jars = [
-        "@org_parboiled_parboiled_java//jar:file",
+        "@org_parboiled_parboiled_2_11//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [
-        "//third_party/org/ow2/asm",
-        "//third_party/org/ow2/asm:asm_analysis",
-        "//third_party/org/ow2/asm:asm_tree",
-        "//third_party/org/ow2/asm:asm_util",
-        "//third_party/org/parboiled:parboiled_core",
+        "//third_party/com/chuusai:shapeless_2_11",
+        "//third_party/org/scala-lang:scala_library",
     ],
 )
 
@@ -46,6 +45,7 @@ scala_import(
     jars = [
         "@org_parboiled_parboiled_core//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

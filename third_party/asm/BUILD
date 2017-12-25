@@ -17,6 +17,7 @@ scala_import(
     jars = [
         "@asm_asm//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

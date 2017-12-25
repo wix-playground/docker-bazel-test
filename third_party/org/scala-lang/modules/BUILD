@@ -17,18 +17,7 @@ scala_import(
     jars = [
         "@org_scala_lang_modules_scala_java8_compat_2_11//jar:file",
     ],
-    runtime_deps = [
-    ],
-    deps = [
-        "//third_party/org/scala-lang:scala_library",
-    ],
-)
-
-scala_import(
-    name = "scala_parser_combinators_2_11",
-    jars = [
-        "@org_scala_lang_modules_scala_parser_combinators_2_11//jar:file",
-    ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [
@@ -41,6 +30,20 @@ scala_import(
     jars = [
         "@org_scala_lang_modules_scala_xml_2_11//jar:file",
     ],
+    tags = ["manual"],
+    runtime_deps = [
+    ],
+    deps = [
+        "//third_party/org/scala-lang:scala_library",
+    ],
+)
+
+scala_import(
+    name = "scala_parser_combinators_2_11",
+    jars = [
+        "@org_scala_lang_modules_scala_parser_combinators_2_11//jar:file",
+    ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

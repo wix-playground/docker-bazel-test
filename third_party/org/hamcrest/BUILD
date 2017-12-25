@@ -17,6 +17,7 @@ scala_import(
     jars = [
         "@org_hamcrest_hamcrest_all//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [
@@ -28,6 +29,7 @@ scala_import(
     jars = [
         "@org_hamcrest_hamcrest_core//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [
@@ -39,6 +41,7 @@ scala_import(
     jars = [
         "@org_hamcrest_hamcrest_library//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

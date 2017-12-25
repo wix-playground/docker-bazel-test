@@ -13,21 +13,11 @@ load(
 load("@io_bazel_rules_scala//scala:scala_import.bzl", "scala_import")
 
 scala_import(
-    name = "scala_library",
-    jars = [
-        "@org_scala_lang_scala_library//jar:file",
-    ],
-    runtime_deps = [
-    ],
-    deps = [
-    ],
-)
-
-scala_import(
     name = "scala_compiler",
     jars = [
         "@org_scala_lang_scala_compiler//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [
@@ -39,10 +29,23 @@ scala_import(
 )
 
 scala_import(
+    name = "scala_library",
+    jars = [
+        "@org_scala_lang_scala_library//jar:file",
+    ],
+    tags = ["manual"],
+    runtime_deps = [
+    ],
+    deps = [
+    ],
+)
+
+scala_import(
     name = "scala_reflect",
     jars = [
         "@org_scala_lang_scala_reflect//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [

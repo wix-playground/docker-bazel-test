@@ -13,23 +13,11 @@ load(
 load("@io_bazel_rules_scala//scala:scala_import.bzl", "scala_import")
 
 scala_import(
-    name = "scalaz_effect_2_11",
-    jars = [
-        "@org_scalaz_scalaz_effect_2_11//jar:file",
-    ],
-    runtime_deps = [
-    ],
-    deps = [
-        "//third_party/org/scala-lang:scala_library",
-        "//third_party/org/scalaz:scalaz_core_2_11",
-    ],
-)
-
-scala_import(
     name = "scalaz_concurrent_2_11",
     jars = [
         "@org_scalaz_scalaz_concurrent_2_11//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [
@@ -44,9 +32,24 @@ scala_import(
     jars = [
         "@org_scalaz_scalaz_core_2_11//jar:file",
     ],
+    tags = ["manual"],
     runtime_deps = [
     ],
     deps = [
         "//third_party/org/scala-lang:scala_library",
+    ],
+)
+
+scala_import(
+    name = "scalaz_effect_2_11",
+    jars = [
+        "@org_scalaz_scalaz_effect_2_11//jar:file",
+    ],
+    tags = ["manual"],
+    runtime_deps = [
+    ],
+    deps = [
+        "//third_party/org/scala-lang:scala_library",
+        "//third_party/org/scalaz:scalaz_core_2_11",
     ],
 )
