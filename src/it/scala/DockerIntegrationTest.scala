@@ -7,6 +7,7 @@ import scala.sys.process._
 
 class DockerIntegrationTest extends SpecificationWithJUnit with BeforeAfterAll {
 
+  val dockerBin = "docker"
   val externalPort = "31337"
 
   "DockerIT" should {
@@ -20,17 +21,18 @@ class DockerIntegrationTest extends SpecificationWithJUnit with BeforeAfterAll {
 
     "run two containers that talk to each other" in {
 
-      Process("docker run --rm --name curl --network my_test_network appropriate/curl curl http://httpd:80").!! must contain("It works!")
+      Process(s"$dockerBin run --rm --name curl --network my_test_network appropriate/curl curl http://httpd:80").!! must contain("It works!")
     }
   }
 
   def beforeAll: Unit = {
-    Process("docker network create my_test_network").!!
-    Process(s"docker run --rm -d -p $externalPort:80 --name httpd --network my_test_network httpd:alpine").!!
+
+    Process(s"$dockerBin network create my_test_network").!!
+    Process(s"$dockerBin run --rm -d -p $externalPort:80 --name httpd --network my_test_network httpd:alpine").!!
   }
 
   def afterAll: Unit = {
-    Process("docker kill httpd").!!
-    Process("docker network rm my_test_network").!!
+    Process(s"$dockerBin kill httpd").!!
+    Process(s"$dockerBin network rm my_test_network").!!
   }
 }
