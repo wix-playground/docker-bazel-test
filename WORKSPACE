@@ -268,3 +268,33 @@ maven_jar(
     name = "org_scala_lang_scala_library",
     artifact = "org.scala-lang:scala-library:2.11.8",
 )
+
+maven_jar(
+	name="jetty_server",
+	artifact="org.eclipse.jetty:jetty-server:7.2.0.v20101020"
+)
+
+maven_jar(
+	name="servlet_api",
+	artifact="javax.servlet:servlet-api:jar:2.5"
+)
+
+maven_jar(
+	name="jetty_continuation",
+	artifact="org.eclipse.jetty:jetty-continuation:jar:7.2.0.v20101020"
+)
+
+maven_jar(
+	name="jetty_http",
+	artifact="org.eclipse.jetty:jetty-http:jar:7.2.0.v20101020"
+)
+
+maven_jar(
+	name="jetty_io",
+	artifact="org.eclipse.jetty:jetty-io:jar:7.2.0.v20101020"
+)
+
+maven_jar(
+	name="jetty_util",
+	artifact="org.eclipse.jetty:jetty-util:jar:7.2.0.v20101020"
+)

@@ -40,5 +40,11 @@ scala_specs2_junit_test(
         "//third_party/org/apache/httpcomponents:httpcore",
         "//third_party/org/scala-lang:scala_library",
         "//third_party/org/specs2:specs2_2_11",
+        "@jetty_server//jar",
+        "@servlet_api//jar",
+        "@jetty_continuation//jar",
+        "@jetty_http//jar",
+        "@jetty_io//jar",
+        "@jetty_util//jar",
     ],
 )
