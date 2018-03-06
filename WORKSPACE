@@ -1,5 +1,36 @@
 
 workspace(name = "other")
+
+git_repository(
+    name = "io_bazel_rules_docker",
+    remote = "https://github.com/bazelbuild/rules_docker.git",
+    tag = "v0.4.0",
+)
+
+load(
+    "@io_bazel_rules_docker//container:container.bzl",
+    "container_pull",
+    container_repositories = "repositories",
+)
+
+container_repositories()
+
+container_pull(
+    name = "curl-container",
+    registry = "index.docker.io",
+    repository = "appropriate/curl",
+    # use digest rather than tag, to make it deterministic
+    tag = "latest"
+)
+
+container_pull(
+    name = "httpd-container",
+    registry = "index.docker.io",
+    repository = "library/httpd",
+    # use digest rather than tag, to make it deterministic
+    tag = "alpine"
+)
+
 rules_scala_version="c8fec77ede46a3cf76a5d48e720778800a790bbe" # update this as needed
 
 http_archive(
@@ -18,6 +49,24 @@ load("@io_bazel_rules_scala//specs2:specs2_junit.bzl", "specs2_junit_repositorie
 
 scala_repositories()
 specs2_junit_repositories()
+
+# Required configuration for remote build execution
+bazel_toolchains_version="44200e0c026d86c53470d107b3697a3e46469c43"
+bazel_toolchains_sha256="699b55a6916c687f4b7dc092dbbf5f64672cde0dc965f79717735ec4e5416556"
+http_archive(
+             name = "bazel_toolchains",
+             urls = ["https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/archive/%s.tar.gz"%bazel_toolchains_version, "https://github.com/bazelbuild/bazel-toolchains/archive/%s.tar.gz"%bazel_toolchains_version],
+             strip_prefix = "bazel-toolchains-%s"%bazel_toolchains_version,
+             sha256 = bazel_toolchains_sha256,
+)
+
+core_server_build_tools_version="db4ea70f486ff164b65ad2516017b229e2a742b3" # update this as needed
+
+git_repository(
+             name = "core_server_build_tools",
+             remote = "git@github.com:wix-private/core-server-build-tools.git",
+             commit = core_server_build_tools_version
+)
 
 maven_jar(
     name = "org_parboiled_parboiled_scala_2_11",

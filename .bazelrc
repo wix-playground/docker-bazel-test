@@ -5,4 +5,14 @@ test --strategy=Scalac=worker
 test --test_arg=--jvm_flags=-Dcom.google.testing.junit.runner.shouldInstallTestSecurityManager=false
 build --experimental_ui
 test --experimental_ui
-      
+
+# Set flags for uploading to BES without Remote Build Execution.
+build:results-local --bes_backend="buildeventservice.googleapis.com"
+build:results-local --bes_timeout=10s
+build:results-local --bes_best_effort=false
+build:results-local --tls_enabled=true
+build:results-local --auth_enabled=true
+build:results-local --spawn_strategy=local
+build:results-local --experimental_remote_spawn_cache
+build:results-local --remote_cache=remotebuildexecution.googleapis.com
+build:results-local --remote_timeout=3600

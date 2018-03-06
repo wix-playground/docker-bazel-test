@@ -9,11 +9,17 @@ load(
     "scala_specs2_junit_test",
 )
 
+load("@io_bazel_rules_docker//docker:docker.bzl", "docker_build")
+
+docker_build(name="curl", base="@curl-container//image")
+docker_build(name="httpd", base="@httpd-container//image")
+
+
 scala_specs2_junit_test(
     name = "root",
     size = "small",
     srcs = glob(["*.java"]) + glob(["*.scala"]),
-    data = ["//:coordinates"],
+    data = ["//:coordinates", ":curl.tar", ":httpd.tar"],
     javacopts = [
         "-g",
         "-deprecation",
@@ -47,4 +53,5 @@ scala_specs2_junit_test(
         "@jetty_io//jar",
         "@jetty_util//jar",
     ],
+    timeout="long",
 )
